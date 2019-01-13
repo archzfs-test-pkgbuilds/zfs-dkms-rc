@@ -13,8 +13,10 @@ pkgrel=1
 makedepends=()
 arch=("x86_64")
 url="http://zfsonlinux.org/"
-source=("https://github.com/zfsonlinux/zfs/releases/download/zfs-${pkgver/_/-}/zfs-${pkgver/_/-}.tar.gz")
-sha256sums=("66fa2aa270586dc3c0f64d08b83f126f288163d6fb622e8d85e3e86a118a2082")
+source=("https://github.com/zfsonlinux/zfs/releases/download/zfs-${pkgver/_/-}/zfs-${pkgver/_/-}.tar.gz"
+        "upstream-4f981f6-additional-fixes-for-current_kernel_time-in-4.20.patch")
+sha256sums=("66fa2aa270586dc3c0f64d08b83f126f288163d6fb622e8d85e3e86a118a2082"
+            "6f27c3dae57c424e06aec31df6c1e1a821e547aa4e933f2f9b894b5e6762b52d")
 license=("CDDL")
 depends=("zfs-utils-rc=${pkgver}" "lsb-release" "dkms")
 provides=("zfs" "zfs-headers" "spl" "spl-headers")
