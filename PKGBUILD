@@ -8,13 +8,15 @@
 pkgname="zfs-dkms-rc"
 pkgdesc="Kernel modules for the Zettabyte File System."
 
-pkgver=2.0.0_rc3
+pkgver=2.1.0_rc7
 pkgrel=1
 makedepends=()
 arch=("x86_64")
 url="https://zfsonlinux.org/"
-source=("https://github.com/zfsonlinux/zfs/releases/download/zfs-${pkgver/_/-}/zfs-${pkgver/_/-}.tar.gz")
-sha256sums=("d06ef8baa44a302ff28c6860e4ff1bf454c617198f755dbbce5d46d3bb7bca7b")
+source=("https://github.com/zfsonlinux/zfs/releases/download/zfs-${pkgver/_/-}/zfs-${pkgver/_/-}.tar.gz"
+              "linux-5.12-compat.patch")
+sha256sums=("d828c06111a46eb5b1a7908014e69a72af96f3c444bd49a103baf974843bdbe5"
+                        "9c601804dc473766d85da2198aa3769707e051d3659dc82dd1302edd5e91a8cf")
 license=("CDDL")
 depends=("zfs-utils-rc=${pkgver}" "lsb-release" "dkms")
 provides=("zfs" "zfs-headers" "spl" "spl-headers")
